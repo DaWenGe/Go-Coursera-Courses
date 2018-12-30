@@ -1,0 +1,11 @@
+Moore's Law:
+
+Predicted that transistor density would double every two years leading to more and smaller transistors which can switch faster
+
+Physical limitations:
+
+    1. Increasing transistor density leads to increased power consumption
+    2. High power leads to high temperature which might melt the chip if no proper cooling system is present
+    3. Voltage scaling cant continue forever
+    4. Leakage power has been growing over time
+    5. Dynamic power
