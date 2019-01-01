@@ -23,10 +23,10 @@ type Host struct {
 func (host *Host) getPermission(p *Philosopher) bool {
 	inUse := false
 	host.Lock()
-	inUse = host.chopsticksMap[(*p).leftCS] || host.chopsticksMap[(*p).rightCS]
+	inUse = host.chopsticksMap[p.leftCS] || host.chopsticksMap[p.rightCS]
 	if !inUse {
-		host.chopsticksMap[(*p).leftCS] = true
-		host.chopsticksMap[(*p).rightCS] = true
+		host.chopsticksMap[p.leftCS] = true
+		host.chopsticksMap[p.rightCS] = true
 	}
 	host.Unlock()
 	return inUse
@@ -34,8 +34,8 @@ func (host *Host) getPermission(p *Philosopher) bool {
 
 func (host *Host) doneEating(p *Philosopher) {
 	host.Lock()
-	host.chopsticksMap[(*p).leftCS] = false
-	host.chopsticksMap[(*p).rightCS] = false
+	host.chopsticksMap[p.leftCS] = false
+	host.chopsticksMap[p.rightCS] = false
 	host.Unlock()
 }
 
